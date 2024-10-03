@@ -18,9 +18,10 @@ pivoted_data = aggregated_data.pivot(index='year_of_assessment', columns='income
 y = pivoted_data.loc[2023]
 my_labels = ['Dividends', 'Employment Income', 'Income from Trade and Profession', 'Interest', 'Other Types', 'Rent', 'Royalties']
 #print(y)
+explode = (0.14, 0.14, 0.14, 0.14, 0.14, 0.14, 0.14)
 
-
-plt.pie(y)
+plt.pie(y, labels=my_labels, explode=explode, textprops={'fontsize': 10})
+plt.axis('equal')
 plt.legend()
 
 plt.show()
